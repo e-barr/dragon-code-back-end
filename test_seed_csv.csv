@@ -1,0 +1,148 @@
+Category,Question Text (Temporary),Answer Text,Option 1,Option 2,Option 3,Question Image Link,Difficulty Level
+Linux,Which command is used to view compressed text file contents?,zcat,type,cat,print,,3
+Linux,Which command changes a file's group owner?,chgrp,cgrp,group,change,,3
+Linux,Which command creates an empty file if it doesn't already exist?,touch,ed,read,cat,,3
+Linux,Which option of rm command is used to remove a directory with all its subdirectories?,-r,#NAME?,#NAME?,#NAME?,,3
+Linux,Which command will give you information about how much disk space each file in the current directory uses?,du,ls -l,ls -la,ls -a,,3
+Linux,Which of the following commands can be used to copy files across systems?,ftp,ssh,telnet,rsh,,3
+Linux,Which of the following commands can be used to change default permissions for files and directories at the time of creation?,unmask,chmod,chown,chgrp,,3
+Linux,Which of the following commands will allow the user to search contents of a file for a particular pattern?,grep,touch,find,ls,,1
+Linux,Which of the following commands will display the current date in the form dd/mm/yyyy?,date +%d/%m/%Y,date +‰Û%d/%m/%Y‰Û,date +/%d/%m/20%y,date +‰Û/%d/%m/20%y‰Û,,3
+Linux,How do you add (append) a file ‰ÛÏfile1‰Û to the example.tar file?,tar -rvf file1 example.tar,tar -evf file1 example.tar,tar -cvf example.tar file1,you cannot add a file to example.tar,,3
+Linux,How do you execute an ls command inside a vi editor?,:!ls,:ls,!ls,you cannot execute that,,3
+Linux,What command would you use to view the available routes?,netstat -r,show route,route status,see routes,,3
+Linux,Which of the following represents the user home directory?,~,/,.,..,,2
+Linux,Which of the following is true if a file is removed in Unix using the 'rm' command?,The file cannot be recovered by a user,The file can be recovered by a normal user,The file can be fully recovered provided the system is not rebooted,The file will be moved to /lost+found directory and can only be recovered by administrators,,3
+Linux,Which of the following occurs when executing the 'cd..' command when at the root level?,Nothing happens,Error message indicating the user can't access beyond the root level,Behavior is unix-flavor dependent,Results in changing to the 'home' directory,,3
+Linux,How do you rename a file with the name ‰ÛÏnew‰Û to one with the name ‰ÛÏold‰Û?,mv new old,move new old,cp new old,rn new old,,2
+Linux,What command is used to copy files and directories?,cp,copy,rn,cpy,,2
+Linux,Which of the following file systems has journaling capability?,procfs,ext4,isofs,ext2,,3
+Linux,Which is loaded into memory when a system is first booted?,kernal,shell,commands,script,,2
+Linux,What command is used to run a file in the background?,&,*,?,|,,3
+Linux,What does the following command do ? who | wc ‰ÛÒl,List the number of users logged in,List the users,List the number of users in the system,Display the content of who command,,3
+Linux,Create a new file ‰ÛÏnew.txt‰Û that is a concatenation of ‰ÛÏfile1.txt‰Û and ‰ÛÏfile2.txt‰Û,cat file1.txt file2.txt > new.txt,mv file[12].txt new.txt,cp file.txt file2.txt new.txt,ls file1.txt file2.txt | new.txt,,3
+Linux,Which of the following is NOT a valid variable in bash?,some-var,_var_,_1var,__,,3
+Linux,Which of the following best describe hidden files?,Files that begin with a ‰Û÷.‰Ûª,Files that cannot be opened by ordinary user for writing,Permitted for (can be accessed) only superusers,Those whose ‰Û÷read‰Ûª bit is set to ‰Û÷h‰Ûª,,2
+Linux,What is a shell in UNIX?,a program through which users can issue commands to UNIX,a window management system,the thing that rides on the back of a turtle in UNIX,the login screen,,1
+Linux,Which of the following represents an absolute path?,/usr/bin/cat,cs2204/,bin/cat,../home/file.txt,,3
+Linux,What does BASH shell stand for?,Bourne-again Shell,Basic Access Shell,Big & Advanced Shell,Basic to Advanced Shell,,1
+Linux,"Which of the following is the right option to search for BOB, Bob, BOb or BoB?",grep ‰Û÷B[oO][bB]‰Ûª files,grep ‰ÛÒi Bob files,grep ‰Û÷[BOB]‰Ûª files,grep -v ‰Û÷Bob‰Ûª files,,3
+Linux,How do you remove duplicate lines from the file foo using uniq?,sort foo | uniq ‰ÛÒu,sort foo | uniq ‰ÛÒc,sort -u foo | uniq -d,sort foo | uniq ‰ÛÒI,,3
+Linux,Which command is used to reexecute the previous command?,!!,!cat,!3,!$,,3
+Coding History,Steve Wozniak built his company's first computer using a wooden box. What company did he co-found?,Apple,Microsoft,VMWare,Intel,,1
+Coding History,This person is often called the inventor of the modern computer. They created the first fully electronic computer.,Konrad Zuse,Byron Lovelace,Charles Babbage,Alan Turing,,3
+Coding History,This invention helped make computers much smaller and faster. What is it called?,Integrated Circuit,Vacuum Tube,Random Access Memory,Central Processing Unit,,2
+Coding History,This invention replaced vacuum tubes and made computers much smaller and faster.,Transistor,RAM,Transformer,ENIAC,,2
+Coding History,This person created what is now known as the first computer program.  The program was made to help the Analytical Engine calculate numbers.,Ada Lovelace,Charles Babbage,Konrad Keuring,William Zuse,,1
+Coding History,A byte consists of how many bits?,8,16,2,64,,1
+Coding History,This founder of IBM was responsible for completing the tabulation of the US Census in six weeks.,Herman Hollerith,Joseph Jacquard,Thomas Edison,Charles Colmar,,2
+Coding History,"Which famous tech leader said ""You have zero privacy anyway. Get over it.""?","Scott McNealy, Sun Microsystems","Mark Zuckerberg, Facebook","Steve Jobs, Apple","Larry Ellison, Oracle",,3
+Coding History,Which hobbyist group helped Apple get its start?,The Homebrew Computer Club,Electro-Bucks,Silicon Fellows of Sunnyvale,D&D United,,2
+Coding History,Which of the following commands did Bill Gate recently admit was a mistake?,Control-Alt-Delete,Alt-F4,Control-Z,Control-X,,2
+Coding History,The Bootstrap web development framework was originally developed by employees of which tech company?,Twitter,Facebook,Microsoft,Mozilla,,1
+Coding History,"Which tech giant filed the most patents in the US in 2013, for over 10 consecutive years?",IBM,Google,Microsoft,Oracle,,2
+Coding History,"What does ""hummingbird"" refer to in Silicon Valley terms?",A recent update to Google's algorithm,A developer who can code incredibly quickly,"One of the past few years ""unicorns""",A developer who leaves the Bay Area after a year or two,,2
+Coding History,What were the dual states of transistors called?,Binary,Dual node,On/Off,Paired Systems,,1
+Coding History,Which of the following is a circuit that directs operations for a processor?,Control Unit,ALU,RAM,Execute Phase,,2
+Coding History,What was the name of the first programmable computer used to break the German Lorenz cipher?,Colossus,Bombe,Enigma,Flowers,,2
+Coding History,Which of the following companies made the first legal US drone delivery in 2016?,7-Eleven,Amazon,Google,Microsoft,,3
+Coding History,Which of the following gave the first public demonstration of radio?,Nikola Tesla,Thomas Edison,Guglielmo Marconi,Franklin Roosevelt,,2
+Coding History,"In 1980, Apple declared there would be no more of which of the following items inside its buildings and on its grounds?",Typewriters,Doors,IBM Machines,Gates,,2
+Coding History,In what year did Microsoft ship Windows 1.0?,1983,1984,1985,1986,,3
+Coding History,Which of the following states that transistors in circuits double every 24 months?,Moore's Law,Landauer's Principle,Bell's Law,Engelbart's Law,,1
+Coding History,Which popular language did John Kemeny and Thomas Kurtz develop?,BASIC,Perl,QB64,FORTRAN,,3
+Coding History,How did Norway avoid the Morris code worm in 1988?,Unplugging from the internet,Resetting its mainframes,Building robust anti-virus software,Shutting all electronic devices off for 72 hours,,2
+Coding History,What name did Jeff Bezos originally consider for his company prior to Amazon?,Cadabra,Aardvark,Vistas,Astrid,,3
+Coding History,Which company originally started by selling playing cards?,Nintendo,Airbnb,Sony,Amazon,,2
+Coding History,What company was the first to feature video chat?,AT&T,Skype,Google,IBM,,2
+Coding History,Which of the following is credited as the original creator of the World Wide Web?,Tim Berners-Lee,Andreas Reuter,Roy Fielding,Al Gore,,1
+Coding History,What company was previously known for running servers on a proprietary UNIX OS called Solaris?,Sun Microsystems,Texas Instruments,Compaq,Control Data Corporation,,3
+Coding History,Which of the following companies was the first to fully utilize the RAID concept in large storage devices?,Hewlett-Packard,Dell,EMC,LSI Logic,,3
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Rails,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Data Structures,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
+Python,,,,,,,
