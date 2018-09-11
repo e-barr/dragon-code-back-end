@@ -2,8 +2,8 @@ class CreateQuestions < ActiveRecord::Migration[5.2]
   def change
     create_table :questions do |t|
       t.string :category
-      t.string :difficulty
-      t.string :description
+      t.float :difficulty_level
+      t.string :content
       t.string :answer
       t.string :option1
       t.string :option2
@@ -13,4 +13,3 @@ class CreateQuestions < ActiveRecord::Migration[5.2]
     end
   end
 end
-
