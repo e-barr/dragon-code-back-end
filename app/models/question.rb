@@ -2,7 +2,7 @@ class Question < ApplicationRecord
   has_many :game_questions
   all_options_hash = {}
 
-  def correct_answer?(user_answer)
+  def correct_answer?(user_response)
     user_response == self.answer
   end
 

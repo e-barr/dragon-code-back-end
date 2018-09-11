@@ -3,4 +3,7 @@ class QuestionsController < ApplicationController
     questions = Question.all
     render json: questions
   end
+  
+  # requesting a question
+    # expect a game id
 end

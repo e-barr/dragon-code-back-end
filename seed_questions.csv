@@ -1,5 +1,5 @@
 Category,Question Text (Temporary),Answer Text,Option 1,Option 2,Option 3,Question Image Link,Difficulty Level
-Ruby,Which is a valid way to declare a variable?,a = 1,let a = 1,int a; a = 1;,const a = 1;,https://drive.google.com/open?id=1WfT0GivlA70YpIfzBR8ZpbS2dJH0mplF,
+Ruby,Which is a valid way to declare a variable?,a = 1,let a = 1,int a; a = 1;,const a = 1;,https://drive.google.com/open?id=1WfT0GivlA70YpIfzBR8ZpbS2dJH0mplF,1
 Ruby,"What does self refer to in the following?class Book  all_books = []  def initialize(title, author)    self.title = title    self.author = author  endend",an instance of the book class,Book,title,book,https://drive.google.com/open?id=19uJhguFqECXquurNSnRfQlcWmEwLBDNQ,1
 Ruby,Which of the following is not a valid string method?,"""hello"".count","""hello"".size","""hello"".length","""hello"".reverse",https://drive.google.com/open?id=18IDye2zRcNqFgJ9ZlZ-7yEe--t14ZR93,2
 Ruby,Which of the following is not a valid method?,"[1,2,3].includes?(2)","[1,2,3].map{ |el| el * 2 }","[1,2,3].each { |el| console.log(el) }","[1,2,3].reverse",https://drive.google.com/open?id=1tyolWCBr6OPhkCaiacBTEQlc78R_YOtq,1
