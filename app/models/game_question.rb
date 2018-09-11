@@ -6,7 +6,7 @@ class GameQuestion < ApplicationRecord
     question.correct_answer?(user_response) ? score += question.difficulty_level : score
   end
 
-  def get_question
+  def get_new_question
     asked_questions = GameQuestion.all.select { |gq| gq.game_id == self.game_id }.map{ |gq2| gq2.id }
 
     new_question = false
