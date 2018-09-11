@@ -5,7 +5,7 @@ class Question < ApplicationRecord
     [self.option1, self.option2, self.option3]
   end
 
-  def correct_answer?(user_answer)
+  def correct_answer?(user_response)
     user_response == self.answer
   end
 end
