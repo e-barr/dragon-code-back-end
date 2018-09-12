@@ -3,7 +3,7 @@ class GameQuestion < ApplicationRecord
   belongs_to :question
 
   def update_score(user_response)
-    question.correct_answer?(user_response) ? score += question.difficulty_level : score
+    question.correct_answer?(user_response) ? game.score += question.difficulty_level : game.score
   end
 
   def get_new_question
