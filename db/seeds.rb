@@ -9,6 +9,20 @@ seed_csv = './seed_questions.csv'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Question.destroy_all
+Game.destroy_all
+GameQuestion.destroy_all
+
+# byebug
+pablo = User.create(username: "Pablo")
+erica = User.create(username: "Erica")
+stephen = User.create(username: "Stephen")
+
+Game.create(user: pablo, username: "Pablo", score: 0)
+Game.create(user: erica, username: "Erica", score: 0)
+Game.create(user: stephen, username: "Stephen", score: 0)
+
 CSV.foreach(seed_csv, headers: true) do |row|
   Question.create({
     category: row["Category"],
