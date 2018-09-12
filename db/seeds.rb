@@ -16,12 +16,12 @@ GameQuestion.destroy_all
 
 # byebug
 pablo = User.create(username: "Pablo")
-erica = User.create(username: "Erica")
+erika = User.create(username: "Erika")
 stephen = User.create(username: "Stephen")
 
-Game.create(user: pablo, username: "Pablo", score: 0)
-Game.create(user: erica, username: "Erica", score: 0)
-Game.create(user: stephen, username: "Stephen", score: 0)
+pablo_game = Game.create(user: pablo, username: "Pablo", score: 0)
+erika_game = Game.create(user: erika, username: "Erika", score: 0)
+stephen_game = Game.create(user: stephen, username: "Stephen", score: 0)
 
 CSV.foreach(seed_csv, headers: true) do |row|
   Question.create({
@@ -34,3 +34,7 @@ CSV.foreach(seed_csv, headers: true) do |row|
     option3: row["Option 3"]
   })
 end
+
+GameQuestion.create(game: pablo_game, question: Question.all.first)
+GameQuestion.create(game: erika_game, question: Question.all.second)
+GameQuestion.create(game: stephen_game, question: Question.all.last)
