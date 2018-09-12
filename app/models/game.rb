@@ -2,8 +2,6 @@ class Game < ApplicationRecord
   validates :username, presence: true
   belongs_to :user
   has_many :game_questions
-<<<<<<< HEAD
-=======
   after_initialize :set_default_score, :create_and_or_associate_new_user
 
   @@high_score = 0
@@ -32,5 +30,4 @@ class Game < ApplicationRecord
     self.score += total_points
   end
 
->>>>>>> 8d66d8729c411375d891e75a203dd71886b2a890
 end
