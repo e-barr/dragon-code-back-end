@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_09_11_165838) do
   create_table "game_questions", force: :cascade do |t|
     t.integer "game_id"
     t.integer "question_id"
+    t.integer "user_answer"
   end
 
   create_table "games", force: :cascade do |t|
