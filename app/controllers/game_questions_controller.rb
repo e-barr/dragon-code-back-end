@@ -5,9 +5,11 @@ class GameQuestionsController < ApplicationController
   end
 
   def create
-    new_game_question = GameQuestion.new(game_id: game_question_params[:game_id])
-    new_question = new_game_question.get_new_question
-
+    game_object = Game.find(game_question_params[:game_id])
+    new_game_question = GameQuestion.new(game: game_object)
+    new_question = new_game_question.get_new_question(game_question_params[:difficulty_level])
+    new_game_question.question = new_question
+    
     formatted_json = new_question.format_new_question_hash
 
     if new_game_question.save
@@ -28,6 +30,6 @@ class GameQuestionsController < ApplicationController
   private
 
   def game_question_params
-    params.require(:game_question).permit(:id, :game_id, :question_id, :user_answer)
+    params.require(:game_question).permit(:id, :game_id, :question_id, :user_answer, :difficulty_level)
   end
 end
