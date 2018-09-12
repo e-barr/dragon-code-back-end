@@ -29,4 +29,8 @@ class Game < ApplicationRecord
   def update_score(total_points)
     self.score += total_points
   end
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/master
 end
