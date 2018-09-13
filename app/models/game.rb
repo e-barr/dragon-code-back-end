@@ -70,4 +70,12 @@ class Game < ApplicationRecord
   def formatted_questions
     res = self.game_questions.map { |gq| gq.question.format_new_question_hash }
   end
+
+  def returned_hash
+    {
+      questions: self.formatted_questions,
+      grid_spaces: self.formatted_grid_spaces,
+      event_pieces: self.formatted_event_pieces
+    }
+  end
 end

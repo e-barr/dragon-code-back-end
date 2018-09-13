@@ -10,9 +10,12 @@ seed_csv = './seed_questions.csv'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-Question.destroy_all
 Game.destroy_all
+Level.destroy_all
+GridSpace.destroy_all
+EventPiece.destroy_all
 GameQuestion.destroy_all
+Question.destroy_all
 
 CSV.foreach(seed_csv, headers: true) do |row|
   Question.create({
@@ -25,17 +28,7 @@ CSV.foreach(seed_csv, headers: true) do |row|
     option3: row["Option 3"]
     })
   end
-  
-# byebug
-# pablo = User.create(username: "Pablo")
-# erika = User.create(username: "Erika")
-# stephen = User.create(username: "Stephen")
 
 pablo_game = Game.create(username: "Pablo")
-# erika_game = Game.create(username: "Erika")
-# stephen_game = Game.create(username: "Stephen")
-#
-#
-# GameQuestion.create(game: pablo_game, question: Question.all.first)
-# GameQuestion.create(game: erika_game, question: Question.all.second)
-# GameQuestion.create(game: stephen_game, question: Question.all.last)
+erika_game = Game.create(username: "Erika")
+stephen_game = Game.create(username: "Stephen")

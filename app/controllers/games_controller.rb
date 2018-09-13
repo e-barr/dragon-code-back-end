@@ -5,14 +5,14 @@ class GamesController < ApplicationController
   end
 
   def create
-    # byebug
+    #return questions and board
+    #grid_spaces, event_pieces
     new_game = Game.new(username: game_params[:username])
-    game_user = User.new(username: game_params[:username])
-    new_game.score = 0
-    new_game.user = game_user
+    returned_hash = new_game.returned_hash
+
 
     if new_game.save
-      render json: new_game
+      render json: returned_hash
     else
       render json: new_game.errors
     end
