@@ -58,4 +58,16 @@ class Game < ApplicationRecord
     gq.save
     gq.question
   end
+
+  def formatted_grid_spaces
+    GridSpace.format_grid_spaces
+  end
+
+  def formatted_event_pieces
+    EventPiece.format_event_pieces
+  end
+
+  def formatted_questions
+    res = self.game_questions.map { |gq| gq.question.format_new_question_hash }
+  end
 end

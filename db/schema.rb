@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2018_09_12_165652) do
   create_table "grid_spaces", force: :cascade do |t|
     t.integer "event_piece_id"
     t.integer "level_id"
-    t.integer "pass_through", default: 1
+    t.boolean "pass_through", default: true
     t.integer "x_coor"
     t.integer "y_coor"
     t.string "image_src", default: "dirt"
