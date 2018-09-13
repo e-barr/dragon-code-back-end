@@ -14,15 +14,6 @@ Question.destroy_all
 Game.destroy_all
 GameQuestion.destroy_all
 
-# byebug
-pablo = User.create(username: "Pablo")
-erika = User.create(username: "Erika")
-stephen = User.create(username: "Stephen")
-
-pablo_game = Game.create(user: pablo, username: "Pablo", score: 0)
-erika_game = Game.create(user: erika, username: "Erika", score: 0)
-stephen_game = Game.create(user: stephen, username: "Stephen", score: 0)
-
 CSV.foreach(seed_csv, headers: true) do |row|
   Question.create({
     category: row["Category"],
@@ -32,9 +23,19 @@ CSV.foreach(seed_csv, headers: true) do |row|
     option1: row["Option 1"],
     option2: row["Option 2"],
     option3: row["Option 3"]
-  })
-end
+    })
+  end
+  
+# byebug
+# pablo = User.create(username: "Pablo")
+# erika = User.create(username: "Erika")
+# stephen = User.create(username: "Stephen")
 
-GameQuestion.create(game: pablo_game, question: Question.all.first)
-GameQuestion.create(game: erika_game, question: Question.all.second)
-GameQuestion.create(game: stephen_game, question: Question.all.last)
+pablo_game = Game.create(username: "Pablo")
+# erika_game = Game.create(username: "Erika")
+# stephen_game = Game.create(username: "Stephen")
+#
+#
+# GameQuestion.create(game: pablo_game, question: Question.all.first)
+# GameQuestion.create(game: erika_game, question: Question.all.second)
+# GameQuestion.create(game: stephen_game, question: Question.all.last)
