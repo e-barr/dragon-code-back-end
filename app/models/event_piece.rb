@@ -40,4 +40,21 @@ class EventPiece < ApplicationRecord
     self.question = self.game.pull_one_question(category)
     self.img_src = EVENTS_SETUP[self.name][:image_src]
   end
+
+  def self.format_event_pieces
+    all_event_pieces = EventPiece.all
+    all_event_pieces.map { |ep| ep.format_one_event_piece }
+  end
+
+  def format_one_event_piece
+    formatted_one = {
+      id: self.id,
+      name: self.name,
+      question_id: self.question_id,
+      img_src: self.img_src,
+      x_coor: self.x_coor,
+      y_coor: self.y_coor,
+    }
+
+  end
 end
