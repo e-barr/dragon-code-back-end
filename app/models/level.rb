@@ -2,57 +2,36 @@ class Level < ApplicationRecord
   belongs_to :game
   has_many :grid_spaces
 
-  def current_grid
-    @current_grid
-  end
-
   def populated_question_grid
+    populate_grid_with_grid_spaces
+    add_event_pieces_to_grid
     self.save
-
-    new_grid = create_empty_grid
-    grid_spaced_grid = populate_grid_with_grid_spaces(new_grid)
-    event_pieced_grid = add_event_pieces_to_grid(grid_spaced_grid)
-    @current_grid = event_pieced_grid
-    self.save
-
-    grid_spaced_grid
   end
 
   def create_empty_grid
     Array.new(10) { Array.new(10) }
   end
 
-  def populate_grid_with_grid_spaces(new_grid)
-    counter = 10
+  def populate_grid_with_grid_spaces
+    empty_grid = create_empty_grid
 
-    until counter == 0
-      location = [rand(10), rand(10)]
-
-      if new_grid[location[0]][location[1]] == nil
-        new_grid_space = GridSpace.create(level: self)
-        new_grid[location[0]][location[1]] = new_grid_space
-        counter -= 1
+    empty_grid.each.each_with_index do |row,row_idx|
+      row.each_with_index do |el, col_idx|
+        GridSpace.create(level: self, x_coor: row_idx, y_coor: row_idx)
       end
     end
 
-    new_grid
   end
 
-  def add_event_pieces_to_grid(new_grid)
-    new_grid.each_with_index do |grid_row, grid_row_idx|
-      (0..9).to_a.each_with_index do |grid_col_idx|
-        if new_grid[grid_row_idx][grid_col_idx] != nil
+  def add_event_pieces_to_grid
+    grid_spaces = GridSpace.all.sample(10)
 
-          gs = new_grid[grid_row_idx][grid_col_idx]
-          ep = EventPiece.new(grid_space: gs)
-          ep.pull_question
-          ep.save
-          gs.event_piece_id = ep.id
-          gs.save
-        end
-      end
+    grid_spaces.each do |gs|
+      gs.pass_through = false
+      ep = EventPiece.new(grid_space: gs, x_coor: gs.x_coor, y_coor: gs.y_coor)
+      ep.pull_question
+      ep.save
     end
-    new_grid
   end
 
 end

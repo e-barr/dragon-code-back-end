@@ -8,8 +8,8 @@ class Question < ApplicationRecord
 
   def format_new_question_hash
     {
-      q_id: self.id,
-      question_text: self.content,
+      id: self.id,
+      text: self.content,
       answer: self.answer,
       options: {
         "1": self.option1,

@@ -18,8 +18,10 @@ ActiveRecord::Schema.define(version: 2018_09_12_165652) do
   create_table "event_pieces", force: :cascade do |t|
     t.string "name"
     t.integer "question_id"
-    t.string "img_url"
+    t.string "img_src"
     t.integer "grid_space_id"
+    t.integer "x_coor"
+    t.integer "y_coor"
   end
 
   create_table "game_questions", force: :cascade do |t|
@@ -35,9 +37,12 @@ ActiveRecord::Schema.define(version: 2018_09_12_165652) do
   end
 
   create_table "grid_spaces", force: :cascade do |t|
-    t.integer "question_id"
     t.integer "event_piece_id"
     t.integer "level_id"
+    t.integer "pass_through", default: 1
+    t.integer "x_coor"
+    t.integer "y_coor"
+    t.string "image_src", default: "dirt"
   end
 
   create_table "levels", force: :cascade do |t|

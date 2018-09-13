@@ -32,6 +32,7 @@ class Game < ApplicationRecord
   end
 
   def set_event_pieces
+    # debugger
     current_level.populated_question_grid
   end
 
