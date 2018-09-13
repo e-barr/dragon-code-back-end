@@ -8,11 +8,13 @@ class GamesController < ApplicationController
     #return questions and board
     #grid_spaces, event_pieces
     new_game = Game.new(username: game_params[:username])
-    returned_hash = new_game.returned_hash
+    questions = new_game.questions
+    # returned_hash = new_game.returned_hash
 
 
     if new_game.save
-      render json: returned_hash
+      # render json: returned_hash
+      render json: questions
     else
       render json: new_game.errors
     end

@@ -3,6 +3,7 @@ class Game < ApplicationRecord
   belongs_to :user
   has_many :game_questions
   has_many :levels
+  has_many :questions, through: :game_questions
   after_initialize :set_score, :current_user, :current_level
 
   @@high_score = 0
