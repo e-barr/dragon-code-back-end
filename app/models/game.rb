@@ -27,13 +27,11 @@ class Game < ApplicationRecord
   def create_new_level
     self.levels.push(Level.create(difficulty: 1, game: self))
     self.set_event_pieces
-    # debugger
     self.save
     self.levels.last
   end
 
   def set_event_pieces
-    # debugger
     current_level.populated_question_grid
   end
 
@@ -60,12 +58,20 @@ class Game < ApplicationRecord
     gq.question
   end
 
+  def grid_spaces
+    current_level.grid_spaces
+  end
+
+  def event_pieces
+    grid_spaces.map { |gs| gs.event_piece }.compact
+  end
+
   def formatted_grid_spaces
-    GridSpace.format_grid_spaces
+    grid_spaces.format_grid_spaces
   end
 
   def formatted_event_pieces
-    EventPiece.format_event_pieces
+    event_pieces.format_event_pieces
   end
 
   def formatted_questions
