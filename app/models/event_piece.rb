@@ -8,23 +8,28 @@ class EventPiece < ApplicationRecord
   EVENTS_SETUP = {
     "treasure chest" => {
       topic: "Ruby",
-      image_src: "insert treasure chest image here"
+      image_src: "assets/eventpieces",
+      file_name: "closed_chest.png"
       },
     "wizard" => {
       topic: "Linux",
-      image_src: "insert wizard image here"
+      image_src: "assets/eventpieces",
+      file_name: "wizard.gif"
       },
     "dragon" => {
       topic: "Javascript",
-      image_src: "insert dragon image here"
+      image_src: "assets/eventpieces",
+      file_name: "dragon.gif"
       },
-    "zombie" => {
+    "minotaur" => {
       topic: "HTML/CSS",
-      image_src: "insert zombie image here"
+      image_src: "assets/eventpieces",
+      file_name: "minotaur.gif"
       },
-    "ogre" => {
+    "ox" => {
       topic: "Coding History",
-      image_src: "insert ogre image here"
+      image_src: "assets/eventpieces",
+      file_name: "wizard.gif"
       }
   }
 
@@ -49,6 +54,7 @@ class EventPiece < ApplicationRecord
       img_src: self.img_src,
       x_coor: self.x_coor,
       y_coor: self.y_coor,
+      file_name: self.file_name
     }
 
   end

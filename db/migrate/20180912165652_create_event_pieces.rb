@@ -7,6 +7,7 @@ class CreateEventPieces < ActiveRecord::Migration[5.2]
       t.integer :grid_space_id
       t.integer :x_coor
       t.integer :y_coor
+      t.string :file_name
     end
   end
 end
