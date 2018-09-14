@@ -24,7 +24,7 @@ class Level < ApplicationRecord
   end
 
   def add_event_pieces_to_grid
-    grid_spaces = GridSpace.all.sample(10)
+    grid_spaces = self.grid_spaces.sample(10)
 
     grid_spaces.each do |gs|
       gs.pass_through = false

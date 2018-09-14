@@ -67,15 +67,15 @@ class Game < ApplicationRecord
   end
 
   def formatted_grid_spaces
-    grid_spaces.format_grid_spaces
+    grid_spaces.map { |gs| gs.format_one_grid_space }
   end
 
   def formatted_event_pieces
-    event_pieces.format_event_pieces
+    event_pieces.map { |ep| ep.format_one_event_piece }
   end
 
   def formatted_questions
-    res = self.game_questions.map { |gq| gq.question.format_new_question_hash }
+    game_questions.map { |gq| gq.question.format_new_question_hash }
   end
 
   def returned_hash

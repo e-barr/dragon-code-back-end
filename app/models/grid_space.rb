@@ -4,11 +4,6 @@ class GridSpace < ApplicationRecord
   delegate :game, to: :level
   has_one :question, through: :event_piece
 
-  def self.format_grid_spaces
-    all_grid_spaces = GridSpace.all
-    all_grid_spaces.map { |gs| gs.format_one_grid_space }
-  end
-
   def format_one_grid_space
     formatted_one = {
       id: self.id,

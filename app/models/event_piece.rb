@@ -41,11 +41,6 @@ class EventPiece < ApplicationRecord
     self.img_src = EVENTS_SETUP[self.name][:image_src]
   end
 
-  def self.format_event_pieces
-    all_event_pieces = EventPiece.all
-    all_event_pieces.map { |ep| ep.format_one_event_piece }
-  end
-
   def format_one_event_piece
     formatted_one = {
       id: self.id,
