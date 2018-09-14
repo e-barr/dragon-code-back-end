@@ -4,6 +4,11 @@ class GamesController < ApplicationController
     render json: games
   end
 
+  def show
+    game = Game.find(params[:id])
+    render json: game
+  end
+
   def create
     new_game = Game.new(username: game_params[:username])
     questions = new_game.questions
@@ -16,6 +21,7 @@ class GamesController < ApplicationController
       render json: new_game.errors
     end
   end
+
 
   private
 
