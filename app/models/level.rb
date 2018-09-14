@@ -31,7 +31,7 @@ class Level < ApplicationRecord
   end
 
   def add_event_pieces_to_grid
-    grid_spaces = inner_grid_pieces.sample(10)
+    grid_spaces = inner_grid_spaces.sample(10)
 
     grid_spaces.each do |gs|
       gs.pass_through = false
@@ -39,10 +39,11 @@ class Level < ApplicationRecord
       ep.pull_question
       ep.save
     end
+
   end
 
-  def inner_grid_pieces
-    self.grid_spaces.select { |gs| gs.x_coor != 0 || gs.y_coor != 0 }
+  def inner_grid_spaces
+    grid_spaces.select { |gs| (gs.x_coor != 0 && gs.x_coor != 21) && (gs.y_coor != 0 && gs.y_coor != 21) }
   end
 
 end

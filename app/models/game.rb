@@ -63,7 +63,7 @@ class Game < ApplicationRecord
   end
 
   def event_pieces
-    grid_spaces.map { |gs| gs.event_piece }.compact
+    current_level.inner_grid_spaces.map { |gs| gs.event_piece }.compact
   end
 
   def formatted_grid_spaces
@@ -79,6 +79,7 @@ class Game < ApplicationRecord
   end
 
   def returned_hash
+    # debugger
     {
       questions: self.formatted_questions,
       grid_spaces: self.formatted_grid_spaces,
