@@ -1,3 +1,5 @@
+require 'csv'
+
 class GamesController < ApplicationController
   def index
     games = Game.all
@@ -14,25 +16,25 @@ class GamesController < ApplicationController
     questions = new_game.questions
     returned_hash = new_game.returned_hash
 
-    stephens_grid_test = []
-    byebug
-    # note: trying to insert grid data for 21x21 grid here
-    level_grid_info = './level_grid_info.csv'
-
-    CSV.foreach(level_grid_info, headers: true) do |row|
-      stephens_grid_test << {
-        "id": row.id,
-        "event_piece_id": row.event_piece_id,
-        "level_id": row.level_id,
-        "pass_through": row.pass_through,
-        "x_coor": row.x_coor,
-        "y_coor": row.y_coor,
-        "image_src": row.image_src,
-        "file_name": row.file_name
-      }
-      end
-
-    returned_hash.grid_spaces = stephens_grid_test
+    # stephens_grid_test = []
+    # 
+    # # note: trying to insert grid data for 21x21 grid here
+    # level_grid_info = File.dirname(__FILE__)+'/level_grid_info.csv'
+    # 
+    # CSV.foreach(level_grid_info, headers: true) do |row|
+    #   stephens_grid_test << {
+    #     "id": row["id"],
+    #     "event_piece_id": row["event_piece_id"],
+    #     "level_id": row["level_id"],
+    #     "pass_through": row["pass_through"],
+    #     "x_coor": row["x_coor"],
+    #     "y_coor": row["y_coor"],
+    #     "image_src": row["image_src"],
+    #     "file_name": row["file_name"]
+    #   }
+    #   end
+    # 
+    # returned_hash.grid_spaces = stephens_grid_test
 
     if new_game.save
       render json: returned_hash
