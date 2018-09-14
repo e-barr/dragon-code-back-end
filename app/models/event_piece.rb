@@ -8,23 +8,28 @@ class EventPiece < ApplicationRecord
   EVENTS_SETUP = {
     "treasure chest" => {
       topic: "Ruby",
-      image_src: "insert treasure chest image here"
+      image_src: "assets/eventpieces",
+      file_name: "closed_chest.png"
       },
     "wizard" => {
       topic: "Linux",
-      image_src: "insert wizard image here"
+      image_src: "assets/eventpieces",
+      file_name: "wizard.gif"
       },
     "dragon" => {
       topic: "Javascript",
-      image_src: "insert dragon image here"
+      image_src: "assets/eventpieces",
+      file_name: "dragon.gif"
       },
-    "zombie" => {
+    "minotaur" => {
       topic: "HTML/CSS",
-      image_src: "insert zombie image here"
+      image_src: "assets/eventpieces",
+      file_name: "minotaur.gif"
       },
-    "ogre" => {
+    "ox" => {
       topic: "Coding History",
-      image_src: "insert ogre image here"
+      image_src: "assets/eventpieces",
+      file_name: "wizard.gif"
       }
   }
 
@@ -38,7 +43,8 @@ class EventPiece < ApplicationRecord
   def pull_question
     category = EVENTS_SETUP[self.name][:topic]
     self.question = self.game.pull_one_question(category)
-    self.img_src = EVENTS_SETUP[self.name][:image_src]
+    self.image_src = EVENTS_SETUP[self.name][:image_src]
+    self.file_name = EVENTS_SETUP[self.name][:file_name]
   end
 
   def format_one_event_piece
@@ -46,9 +52,10 @@ class EventPiece < ApplicationRecord
       id: self.id,
       name: self.name,
       question_id: self.question_id,
-      img_src: self.img_src,
+      image_src: self.image_src,
       x_coor: self.x_coor,
       y_coor: self.y_coor,
+      file_name: self.file_name
     }
 
   end

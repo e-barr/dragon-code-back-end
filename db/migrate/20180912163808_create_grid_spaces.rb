@@ -6,7 +6,8 @@ class CreateGridSpaces < ActiveRecord::Migration[5.2]
       t.boolean :pass_through, default: true
       t.integer :x_coor
       t.integer :y_coor
-      t.string :image_src, default: 'dirt'
+      t.string :image_src, default: 'assets/griditems'
+      t.string :file_name, default: 'dirt0.png'
     end
   end
 end

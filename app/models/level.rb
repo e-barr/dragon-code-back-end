@@ -17,7 +17,7 @@ class Level < ApplicationRecord
 
     empty_grid.each.each_with_index do |row,row_idx|
       row.each_with_index do |el, col_idx|
-        GridSpace.create(level: self, x_coor: row_idx, y_coor: row_idx)
+        GridSpace.create(level: self, x_coor: col_idx, y_coor: row_idx)
       end
     end
 

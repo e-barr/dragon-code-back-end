@@ -12,7 +12,8 @@ class GridSpace < ApplicationRecord
       pass_through: self.pass_through,
       x_coor: self.x_coor,
       y_coor: self.y_coor,
-      image_src: self.image_src
+      image_src: self.image_src,
+      file_name: self.file_name
     }
 
   end
