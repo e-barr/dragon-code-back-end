@@ -9,27 +9,17 @@ class GameQuestionsController < ApplicationController
     render json: game_question
   end
 
-  # def create
-  #   game_object = Game.find(game_question_params[:game_id])
-  #   new_game_question = GameQuestion.new(game: game_object)
-  #   new_question = new_game_question.get_new_question(game_question_params[:difficulty_level])
-  #   new_game_question.question = new_question
-  #
-  #   formatted_json = new_question.format_new_question_hash
-  #
-  #   if new_game_question.save
-  #     render json: formatted_json
-  #   else
-  #     render json: new_game_question.errors
-  #   end
-  # end
-
   def update
-    game = GameQuestion.find_by(id: params[:id])
+    game_question = GameQuestion.find_by(id: params[:id])
     # note: not using strong params for id - could be potentially error prone
-    game.update(user_answer: game_question_params[:user_answer])
+    game_question.update(user_answer: game_question_params[:user_answer])
 
-    render json: game
+    if game_question.question.correct_answer?(game_question_params[:user_answer])
+      game_question.game.update_score(game_question.question.difficulty_level)
+      game_question.game.save
+    end
+
+    render json: game_question.game
   end
 
   private

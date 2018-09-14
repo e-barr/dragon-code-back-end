@@ -1,6 +1,7 @@
 require 'csv'
 
 class GamesController < ApplicationController
+
   def index
     games = Game.all
     render json: games
@@ -40,6 +41,16 @@ class GamesController < ApplicationController
       render json: returned_hash
     else
       render json: new_game.errors
+    end
+  end
+
+  def update
+    game = Game.find(params[:id])
+
+    if game.update_attributes
+      render json: game
+    else
+      render game.errors
     end
   end
 
