@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_09_12_165652) do
   create_table "event_pieces", force: :cascade do |t|
     t.string "name"
     t.integer "question_id"
-    t.string "img_src"
+    t.string "image_src"
     t.integer "grid_space_id"
     t.integer "x_coor"
     t.integer "y_coor"

@@ -43,7 +43,8 @@ class EventPiece < ApplicationRecord
   def pull_question
     category = EVENTS_SETUP[self.name][:topic]
     self.question = self.game.pull_one_question(category)
-    self.img_src = EVENTS_SETUP[self.name][:image_src]
+    self.image_src = EVENTS_SETUP[self.name][:image_src]
+    self.file_name = EVENTS_SETUP[self.name][:file_name]
   end
 
   def format_one_event_piece
@@ -51,7 +52,7 @@ class EventPiece < ApplicationRecord
       id: self.id,
       name: self.name,
       question_id: self.question_id,
-      img_src: self.img_src,
+      image_src: self.image_src,
       x_coor: self.x_coor,
       y_coor: self.y_coor,
       file_name: self.file_name
