@@ -32,3 +32,4 @@ CSV.foreach(seed_csv, headers: true) do |row|
 pablo_game = Game.create(username: "Pablo")
 erika_game = Game.create(username: "Erika")
 stephen_game = Game.create(username: "Stephen")
+
